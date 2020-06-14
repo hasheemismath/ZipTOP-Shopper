@@ -88,12 +88,15 @@ class Fileupload extends Component {
                             onDrop={(e)=>this.onDrop(e)}
                             multiple={false}
                             className="dropzone_box"
-                        >   
-                            <div className="wrap">
-                                <FontAwesomeIcon
-                                    icon={faPlusCircle}
-                                />
-                            </div>
+                        >
+                            {({getRootProps}) => (
+                                <div className="wrap"
+                                     {...getRootProps()}>
+                                        <FontAwesomeIcon
+                                            icon={faPlusCircle}
+                                        />
+                                </div>
+                            )}
                         </Dropzone>
                         { this.showUploadedImages()}
                         {
