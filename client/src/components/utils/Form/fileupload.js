@@ -89,12 +89,10 @@ class Fileupload extends Component {
                             multiple={false}
                             className="dropzone_box"
                         >
-                            {({getRootProps}) => (
-                                <div className="wrap"
-                                     {...getRootProps()}>
-                                        <FontAwesomeIcon
-                                            icon={faPlusCircle}
-                                        />
+                            {({getRootProps, getInputProps}) => (
+                                <div className="wrap"  {...getRootProps()}>
+                                    <input  {...getInputProps()} />
+                                    <FontAwesomeIcon  icon={faPlusCircle}/>
                                 </div>
                             )}
                         </Dropzone>

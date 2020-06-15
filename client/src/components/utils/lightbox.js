@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import Lightbox from 'react-images';
+ // import Lightbox from 'react-images';
+import Lightbox from 'react-image-lightbox';
+import 'react-image-lightbox/style.css';
 
 class ImageLightBox extends Component {
 
@@ -9,17 +11,19 @@ class ImageLightBox extends Component {
         images:[]
     }
 
-    static getDerivedStateFromProps(props,state){
+    static getDerivedStateFromProps(props){
         if(props.images){
+
             const images = [];
             props.images.forEach(element=>{
                 images.push({src:`${element}`})
             });
-            return state = {
-                images
+            return {
+                images : images
             }
         }
-        return false
+         return false
+
     }
 
     gotoPrevious = () => {
@@ -39,15 +43,18 @@ class ImageLightBox extends Component {
     }
 
     render() {
+
+        const {currentImage,images} = this.state
+
         return (
-            <Lightbox
-                currentImage={this.state.currentImage}
-                images={this.state.images}
-                isOpen={this.state.lightboxIsOpen}
-                onClickPrev={()=> this.gotoPrevious()}
-                onClickNext={()=> this.gotoNext()}
-                onClose={()=>this.closeLightbox()}
-            />
+                <Lightbox
+                     mainSrc={images[currentImage].src}
+                     nextSrc={images[(currentImage ) % images.length+1 ]}
+                     prevSrc={images[(currentImage ) % images.length-1]}
+                     onCloseRequest={()=>this.closeLightbox()}
+                     onMovePrevRequest={()=> this.gotoPrevious() }
+                     onMoveNextRequest={()=> this.gotoNext()}
+                />
         );
     }
 }

@@ -234,7 +234,7 @@ select {
 ==============================*/
 
 .page_top {
-    border-bottom: 1px solid #999592;
+    border-bottom: 1px solid #999592;   
     padding: 20px 0px;
     text-transform: uppercase;
 }
@@ -270,9 +270,9 @@ header .container .left{
 }
 
 header .container .right{
-    flex-grow: 1;
-    border-left: 1px solid #eeeeee;
-    border-right: 1px solid #eeeeee;
+   flex-grow: 1;
+   border-left: 1px solid #eeeeee;
+   border-right: 1px solid #eeeeee;
 }
 header .container .right .top ,
 header .container .right .bottom {
@@ -604,12 +604,12 @@ footer .business_nfo .nfo {
 ==============================*/
 
 .product_detail_wrapper {
-    display: flex;
+    display: flex;   
     margin-bottom: 140px;
 }
 
 .product_detail_wrapper .right{
-    flex-grow: 1;
+    flex-grow: 1; 
     min-height: 800px;
 }
 
@@ -765,7 +765,7 @@ footer .business_nfo .nfo {
 }
 
 .user_container .user_left_nav {
-    border-right: 1px solid #f8f8f8;
+    border-right: 1px solid #f8f8f8; 
 }
 
 .user_container .user_left_nav .links a {
