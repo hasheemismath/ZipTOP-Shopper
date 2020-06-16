@@ -23,6 +23,8 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json())
 app.use(cookieParser())
 
+app.use(express.static('client/build'))
+
 cloudinary.config({
     cloud_name: process.env.CLOUD_NAME,
     api_key: process.env.CLOUD_API_KEY,
@@ -434,7 +436,13 @@ app.post('/api/site/site_data',auth,admin,(req,res)=>{
     )
 })
 
-
+// DEFAULT
+if( process.env.NODE_ENV === 'production' ){
+    const path = require('path');
+    app.get('/*',(req,res)=>{
+        res.sendfile(path.resolve(__dirname,'../client','build','index.html'))
+    })
+}
 
 const port = process.env.PORT || 3002
 
