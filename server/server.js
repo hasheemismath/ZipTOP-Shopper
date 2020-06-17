@@ -2,9 +2,10 @@ const express = require("express")
 const bodyParser = require("body-parser")
 const cookieParser = require('cookie-parser')
 const cloudinary = require('cloudinary');
-
+//    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build"
 const async = require('async')
 const app = express()
+require('./prod')(app)
 const mongoose = require('mongoose')
 const {admin} = require("./middleware/admin");
 const formidable = require('express-formidable');
