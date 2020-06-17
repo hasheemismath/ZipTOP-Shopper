@@ -2,7 +2,7 @@ const express = require("express")
 const bodyParser = require("body-parser")
 const cookieParser = require('cookie-parser')
 const cloudinary = require('cloudinary');
-//    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build"
+
 const async = require('async')
 const app = express()
 require('./prod')(app)
@@ -438,12 +438,12 @@ app.post('/api/site/site_data',auth,admin,(req,res)=>{
 })
 
 // DEFAULT
-
+if( process.env.NODE_ENV === 'production' ){
     const path = require('path');
     app.get('/*',(req,res)=>{
-        res.sendFile(path.resolve(__dirname,'../client','build','index.html'))
+        res.sendFile(path.resolve(__dirname,'../client1','build','index.html'))
     })
-
+}
 
 const port = process.env.PORT || 3002
 

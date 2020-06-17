@@ -4,9 +4,9 @@ import MyButton from '../utils/button';
 const HomePromotion = (props) => {
 
     const promotion = {
-        img:'/images/featured/featured_home_3.jpg',
+        img:'/images/featured/sp.jpg',
         lineOne:'Up to 40% off',
-        lineTwo:'In second hand guitars',
+        lineTwo:'Leather Brand new Shoes',
         linkTitle:'Shop now',
         linkTo:'/shop'
     }

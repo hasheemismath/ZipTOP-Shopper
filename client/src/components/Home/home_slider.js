@@ -6,14 +6,28 @@ const HomeSlider = (props) => {
 
     const slides = [
         {
-            img:'/images/featured/featured_home.jpg',
+            img:'/images/featured/color.jpg',
             lineOne:'Fender',
             lineTwo:'Custom shop',
             linkTitle:'Shop now',
             linkTo:'/shop'
         },
         {
-            img:'/images/featured/featured_home_2.jpg',
+            img:'/images/featured/fashion1.jpg',
+            lineOne:'B-Stock',
+            lineTwo:'Awesome discounts',
+            linkTitle:'View offers',
+            linkTo:'/shop'
+        },
+        {
+            img:'/images/featured/denim.jpg',
+            lineOne:'B-Stock',
+            lineTwo:'Awesome discounts',
+            linkTitle:'View offers',
+            linkTo:'/shop'
+        },
+        {
+            img:'/images/featured/splash.jpg',
             lineOne:'B-Stock',
             lineTwo:'Awesome discounts',
             linkTitle:'View offers',
